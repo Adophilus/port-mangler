@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+source bin/mangler
+
+_NORMAL_PORT=1234
+
+_MANGLED_PORT=$(mangle $PORT)
