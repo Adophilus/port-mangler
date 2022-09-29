@@ -2,6 +2,8 @@
 
 source bin/mangler
 
-_NORMAL_PORT=1234
+_numberOfPorts=10
 
-_MANGLED_PORT=$(mangle $PORT)
+_mangledPort=$(mangle $_numberOfPorts)
+
+echo $_mangledPort

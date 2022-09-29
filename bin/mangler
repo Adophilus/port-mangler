@@ -1,7 +1,8 @@
 #! /usr/bin/env bash
 
 function mangle () {
-  local port="$1"
-
-  echo "$port"
+  local from=1024
+  local to=65535
+  local numPorts=${1:-1}
+  comm -23 <(seq $from $to | sort) <(ss -Htan | awk '{print $4}' | cut -d':' -f2 | sort -u) | shuf | head -n $numPorts
 }
